@@ -1,0 +1,7 @@
+<nav class="navbar" ng-controller="MenuController">
+    <ul class="nav navbar-nav">
+     	<li ng-repeat='menuItem in menu' ng-class="{'active': menuItem.topic == states.activeItem}" ng-click="states.activeItem=menuItem.topic">
+     			<a href="">{{menuItem.topic}}</a>
+     	</li>
+    </ul>
+</nav>

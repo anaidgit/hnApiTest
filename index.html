@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="robots"			content="index,follow">
+    <meta name="author"			content="Hacker News">
+    <meta name="description" 	content="Hacker News - A Shared Comunity of Latest Techcnology and Code News">
+    <meta name="referrer"		content="origin">
+    <meta name="viewport"		content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" 	href="favicon.ico">
+    <link rel="stylesheet"		type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet"		type="text/css"	href="assets/css/style.css">
+    <title>Hacker News</title>
+</head>
+<body ng-app='hnApp'>
+	<header>
+		<nav class="navbar">
+			<ul class="nav">
+				<li><a href="">Login</a></li>
+				<li><a href="">+ Submit</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="container" when-scrolled='more()'>
+     	<header-section></header-section>
+     	<menu-info></menu-info>
+     	<news-section></news-section>
+ 
+    </div>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/MainController.js"></script>
+<script src="js/controllers/MenuController.js"></script>
+<script src="js/directives/HeaderSection.js"></script>
+<script src="js/directives/MenuInfo.js"></script>
+<script src="js/directives/NewsSection.js"></script>
+</body>
+</html>
