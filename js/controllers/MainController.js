@@ -9,18 +9,28 @@ app.controller("MainController", function($scope, $http) {
     $scope.more = function() {
 
         var url =  'http://hn.algolia.com/api/v1/search_by_date?tags=story&hitsPerPage=5';
+
+
         $http.get(url)
             .success(function(data) {
-                $scope.listOfEntries    = data.hits;
-                for (line in data) {
-                    var newItem = ($scope.listOfEntries.length+1);
-                    $scope.listOfEntries.push(newItem);
-                }
+              if( ! data ) return;
 
-                $scope.loading = false;
+               var newItem;
+              
+              $scope.listOfEntries = [];
+
+              for ( line in data.hits ) {
+
+                newItem = ( data.hits.length + 1 );
+
+                $scope.listOfEntries.push( data.hits[ line ] );
+
+              }
+
+              $scope.loading = false;
+
             });
     };
-
   // we call the function twice to populate the list
   $scope.more();
 });
