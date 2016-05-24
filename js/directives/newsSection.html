@@ -2,12 +2,12 @@
     <ol class="list-group">
 		<li ng-repeat='entry in listOfEntries'>
 			<div class="row">
-			  	<div class="col-md-10">
+			  	<div class="col-xs-12 col-sm-12 col-md-10">
 			  		<h2><a href="{{entry.url}}" target="_blank">{{entry.title}}</a></h2>
-			  		<p>{{entry.created_at}} | by {{entry.author}}</p>
+			  		<p>{{entry.created_at}} | by {{entry.author}} | comments {{ entry.num_comments }}</p>
 			  	</div>
-			 	<div class="col-md-2 text-right">
-			  		<span class="label label-default">{{entry.points}} Points</span>
+			 	<div class="col-xs-12 col-sm-12 col-md-2 text-right">
+			  		<p>{{entry.points}} Points</p>
 			  		<span class="label label-warning">Vote</span>
 			  	</div>
 			</div>

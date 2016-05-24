@@ -1,28 +1,29 @@
-app.controller('MenuController', function ($scope) {
-	$scope.states = {};
-    $scope.states.activeItem = 'New';
+app.controller('MenuController', function ($scope, dataService) {
+	$scope.states 				= {};
+    $scope.states.activeItem 	= 'New';
 	$scope.menu = [ 
 	  { 
-	    topic: 'New', 
-	    url: '', 
+	    topic: 		'New', 
+	    menuUrl: 	'/news', 
 	  }, 
 	  { 
-	    topic: 'Comments', 
-	    url: '', 
+	    topic: 		'Comments', 
+	    menuUrl: 	'/comments', 
 	  },
 	  { 
-	    topic: 'Show', 
-	    url: '', 
+	    topic: 		'Show', 
+	    menuUrl: 	'/show', 
 	  },
 	  { 
-	    topic: 'Ask', 
-	    url: '', 
+	    topic: 		'Ask', 
+	    menuUrl: 	'/ask', 
 	  },
 	  { 
-	    topic: 'Jobs', 
-	    url: '', 
+	    topic: 		'Jobs', 
+	    menuUrl: 	'/jobs', 
 	  }
 	];
+
 });
 
 

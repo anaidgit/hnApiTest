@@ -4,12 +4,12 @@ app.directive('menuInfo', function() {
     scope: {},
     templateUrl: 'js/directives/menuInfo.html',
     
-    link: function(scope, element, attrs) {
-
-      scope.download = function() {
-        element.addClass('active')
-      }
-
+    link: function(scope) {
+      scope.openNavBar  = function () {
+        alert("clicked");
+    		var li = document.getElementsByClassName("navbar-nav").getElementsByTagName("li");
+		}
+        
     }
 
   };

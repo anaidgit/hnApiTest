@@ -1,13 +1,14 @@
 app.controller("MainController", function($scope, $http) {
 
-    $scope.url            =  'http://hn.algolia.com/api/v1/search_by_date?tags=story&hitsPerPage=10';
+    $scope.stringValue    = "http://hn.algolia.com/api/v1/search_by_date?tags=story&hitsPerPage=";
+    $scope.url            = $scope.stringValue;
     var hitsN             = 10;
     $scope.loading        = true;
     $scope.listOfEntries  = [];
 
     $scope.more = function() {
 
-        $scope.url   =  'http://hn.algolia.com/api/v1/search_by_date?tags=story&hitsPerPage=' + hitsN;
+        $scope.url   =  $scope.stringValue + hitsN;
 
         $http.get($scope.url)
             .success(function(data) {
@@ -37,7 +38,6 @@ app.directive("whenScrolled", function($window){
 
       angular.element($window).bind("scroll", function() {
         if (raw.scrollTop + raw.offsetHeight >= raw.scrollHeight) {
-            alert("scroll");
           scope.loading = true;
         }
         scope.$apply(attrs.whenScrolled);

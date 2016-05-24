@@ -1,147 +1,179 @@
-html,body{
-	background-color:rgb(245,245,245);
+html,
+body {
+	background-color: rgb(245,245,245);
 }
 
-header{
-	position:fixed;
-	top:0;
-	right:0;
-	left:0;
-	width:100%;
-	height:100px;
-	background-color:rgb(43,62,80);
-	overflow:hidden;
+header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	background-color: rgb(43,62,80);
+	overflow: hidden;
+	z-index:1;
 }
 
-header>nav.navbar ul{
-	width:50%;
-	max-width:100px;
-	float:right;
-	cursor:pointer;
+header nav.navbar ul {
+	width: 50%;
+	max-width: 100px;
+	float: right;
+	cursor: pointer;
 }
 
-header>nav.navbar ul li a{
-	color:rgb(255,255,255);
+header nav.navbar ul li a {
+	color: rgb(255,255,255);
 	opacity: 0.8;
-	text-align:right;
+	text-align: right;
 }
 
-header>nav.navbar ul li:nth-child(2) a{
+header nav.navbar ul li:nth-child(2) a {
 	background-color: rgb(255, 102, 0);
-	color:rgb(255,255,255);
+	color: rgb(255,255,255);
 	opacity: 0.8;
 }
 
-header>nav.navbar ul li a:hover{
+header nav.navbar ul li:nth-child(2) a span:after {
+  content: '+';
+  opacity: 0;
+  padding: 10px;
+  margin-right: -20px;
+  transition: 0.5s;
+}
+
+header nav.navbar ul li a:hover {
 	background-color: transparent;
 	opacity: 1;
+	padding-right: 25px;
+  	transition: 0.5s;
+
 }
 
-header>nav.navbar ul li:nth-child(2) a:hover{
+
+header nav.navbar ul li:nth-child(2) a:hover span:after {
+  opacity: 1;
+  margin-right: 0;
+}
+
+header nav.navbar ul li:nth-child(2) a:hover {
 	background-color: rgb(255, 102, 0);
-	color:rgb(255,255,255);
+	color: rgb(255,255,255);
 	opacity: 1;
 }
 
-section.page-header{
-	margin:50px 0 20px;
+header nav.navbar ul li:nth-child(2) a:hover span {
+  padding-right: 25px;
+  transition: 0.5s;
 }
 
 
-.container{
-	overflow:hidden;
-}
-.container section.page-header figure{
-	width:90px;
-	height:90px;
-	float:right;
-	overflow:hidden;
-}
-
-.container section.page-header figure img{
-	width:100%;
-	max-width:90px;
-}
-
-.container section.page-header h1{
-	font-weight:bold;
-	font-size:1.2em;
-	color:rgb(37,53,68);
-	padding:40px 0 0 0;
+section.page-header {
+	margin: 50px 0 20px;
 }
 
 
-.container section.page-header nav.navbar{
+.container {
+	overflow: hidden;
+}
+
+section.page-header figure {
+	width: 90px;
+	height: 90px;
+	overflow: hidden;
+	position:fixed;
+	z-index:2;
+}
+
+section.page-header figure img {
+	width: 100%;
+	max-width: 90px;
+}
+
+section.page-header h1 {
+	font-weight: bold;
+	color: rgb(37,53,68);
+	font-size:2em;
+	padding: 40px 0 0 0;
+	position:fixed;
+	z-index:2;
+}
+
+section.news-section {
+	margin-top:150px;
+}
+
+
+
+section.news-section ol.list-group {
+	counter-reset: li; 
+	margin-left: 0; 
+	padding-left: 0;
+}
+
+section.news-section ol.list-group li {
+	position: relative; 
+	margin: 0 0 6px 2em; 
+	padding: 4px 8px;
+	list-style: none; 
+	border-top: 1px solid rgb(230, 230, 230);
+}
+
+section.news-section ol.list-group li:before {
+	content: counter(li);
+	counter-increment: li;
+	position: absolute;
+	top: 0px;
+	left: -15px;
+	width: 2em;
+	font-size: 1.5em;
+	color: rgb(230, 230, 230);
+	font-weight: bold;
+	text-align: center;
+}
+
+section.news-section ol.list-group li h2 {
+	font-size: 1em;
+}
+
+section.news-section ol.list-group li p {
+	font-size: 0.8em;
+	color: rgba(43,62,80,0.5);
 	float:left;
 }
-
-.container section.news-section ol.list-group{
-	counter-reset:li; 
-	margin-left:0; 
-	padding-left:0;
-}
-
-.container section.news-section ol.list-group li{
-	position:relative; 
-	margin:0 0 6px 2em; 
-	padding:4px 8px;
-	list-style:none; 
-	border-top:1px solid rgb(230, 230, 230);
-	background:#f6f6f6;
-}
-
-.container section.news-section ol.list-group li:before{
-	content:counter(li);
-	counter-increment:li;
-	position:absolute;
-	top:-1px;
-	left:-2em;
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	box-sizing:border-box;
-	width:2em;
-	margin-right:8px;
-	padding:4px;
-	color:#fff;
-	background:rgb(210, 210, 210);
-	font-weight:bold;
-	text-align:center;
-}
-
-.container section.news-section ol.list-group li h2{
-	font-size:1em;
-}
-
-.container section.news-section ol.list-group li p{
-	font-size: 0.8em;
-	color:rgb(200, 200, 200);
-}
-.container section.news-section ol.list-group li p span{
+section.news-section ol.list-group li p span {
 	padding: 0 5px 0 0;
 }
 
-.container section.news-section ol.list-group li span.label{
-	padding:.6em 1em .8em;
+section.news-section ol.list-group li span.label {
+	padding: .6em 1em .8em;
 }
 
-.container section.news-section ol.list-group li span.label-warning{
+section.news-section ol.list-group li span.label-warning {
 	opacity: 0.8;
-	cursor:pointer;
+	cursor: pointer;
 }
 
-.container section.news-section ol.list-group li span.label-warning:hover{
+section.news-section ol.list-group li span.label-warning:hover {
 	opacity: 1;
 }
 
-.container section.news-section ol.list-group li div.row:first-child{
-	padding:0 2em;
+section.news-section ol.list-group li div.row:first-child {
+	padding: 0 2em;
 }
 
-.container nav.navbar{
+.container nav.navbar {
 	border-bottom: 1px solid #eee;
+	position:fixed;
+	top:150px;
+	z-index:2;
 }
 
-.container nav.navbar ul li a{
+.container nav.navbar span {
+	display:none;
+}
+
+.container nav.navbar ul li a {
 	color: rgb(180, 180, 180);
 	font-weight: normal;
 	text-transform: uppercase;
@@ -152,23 +184,68 @@ section.page-header{
 	transition: all 0.2s linear;
 }
 
-.container nav.navbar ul li a:hover{
+.container nav.navbar ul li a:hover {
 	font-weight: bold;
 	color: rgb(255, 102, 0);
 	border-bottom: solid 2px rgb(255, 102, 0);
 	background-color: transparent;
 }
 
-.container nav.navbar ul li.active a{
+.container nav.navbar ul li.active a {
 	font-weight: bold;
 	color: rgb(255, 102, 0);
 	border-bottom: solid 2px rgb(255, 102, 0);
 }
 
-@media (min-width: 768px){
 
-	.container section.page-header h1{
-		font-size:2em;
+@media (max-width: 768px) {
+	.container nav.navbar ul li {
+		display: none;
+	}
+	.container nav.navbar ul li.active {
+		display: block;
 	}
 
+	.navbar-nav {
+		margin: 0 !important;
+	}
+
+	.container nav.navbar {
+		top:100px;
+	}
+
+	.container nav.navbar span {
+		color: rgb(255, 102, 0);
+  		position: absolute;
+  		width: 100%;
+  		height: 100%;
+  		z-index: 2;
+  		cursor: pointer;
+  		display: block;
+	}
+
+	.container nav.navbar span:before {
+		content:"v";
+		position: absolute;
+		padding: 8px 5px 0 5px;
+	}
+
+	.container nav.navbar-nav>li>a {
+		padding: none;
+	}
+
+	section.page-header figure {
+		float: none;
+		width:50px;
+		height:50px;
+	}
+
+	section.page-header {
+		margin: 0px;
+	}
+
+	section.page-header h1 {
+		color: rgb(240,240,240);
+		font-size: 1.3em;
+	}
 }
